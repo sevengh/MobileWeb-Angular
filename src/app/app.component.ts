@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'MobileWeb';
+  title = 'Mobile Web';
+
+  name = 'Set iframe source';
+  url: string | null = "";
+
+  constructor() {
+    if (this.url == "" || this.url == null)
+      this.url = localStorage.getItem('dataSource');
+
+    if (this.url == "" || this.url == null) {
+      this.url = "https://www.shamanayev.tk/mobile-web";
+      localStorage.setItem('dataSource', this.url);
+    }
+  }
 }
