@@ -8,18 +8,25 @@ import { Router } from '@angular/router';
 })
 export class MainComponent {
 
-  url: string | null = "";
+  isFrame: boolean = true;
 
   constructor(private router: Router) {
-    if (this.url == "" || this.url == null)
-      this.url = localStorage.getItem('dataSource');
+    this.isFrame = localStorage.getItem('iframe') == "true";
 
-    if (this.url == "" || this.url == null) {
+    let url: string | null = "";
+
+    if (url == "" || url == null)
+      url = localStorage.getItem('dataSource');
+
+    if (url == "" || url == null) {
       this.router.navigate(['/register']);
       return;
     }
-    
-    window.open(this.url, "_self");
+
+    if (this.isFrame == true)
+      return;
+
+    window.open(url, "_self");
   }
 
 }

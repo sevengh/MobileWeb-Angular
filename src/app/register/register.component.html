@@ -6,5 +6,17 @@
 
     <b>Please enter your url</b><br>
     <input type="text" #siteName value="{{url}}"><br>
+
+    <div>
+        <span class="hintUrl">Quick choose: </span>
+        <span class="hintUrl green" (click)="setUrl('https://www.shamanayev.tk/mobile-web')">Mobile Web, </span>
+        <span class="hintUrl green" (click)="setUrl('https://angular.io')">Angular</span>
+    </div>
+
+    <p>
+        <input type="checkbox" #checkState title="ok" [(ngModel)]="isFrame" (change)="changeChecked()" />
+        <span>Show in frame (unsafe)</span>
+    </p>
     <button (click)="onSubmit(siteName.value)">Submit</button>
 </div>
+<app-footer></app-footer>

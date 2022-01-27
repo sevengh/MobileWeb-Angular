@@ -1,4 +1,6 @@
-<div style="text-align: center; margin-top: 50px;">
+<app-iframe *ngIf="isFrame"></app-iframe>
+<div *ngIf="!isFrame" style="text-align: center; margin-top: 50px;">
     <img src="/assets/icons/icon-72x72.png" alt="">
     <p>Your website is opening, please wait a few seconds ...</p>
 </div>
+<app-footer *ngIf="!isFrame"></app-footer>

@@ -9,15 +9,23 @@ import { RouterModule } from '@angular/router';
 
 import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main/main.component';
+import { IframeComponent } from './iframe/iframe.component';
+import { FooterComponent } from './footer/footer.component';
+import { SafePipe } from './safe.pipe';
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    MainComponent
+    MainComponent,
+    IframeComponent,
+    FooterComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: '', component: MainComponent },
       { path: 'register', component: RegisterComponent },

@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  thisYear: string = "2022";
 
-  constructor() {}
+  constructor() {
+  }
+
 }

@@ -5,3 +5,13 @@ input {
 button {
     margin-top: 10px;
 }
+
+.hintUrl {
+    font-size: 0.7em;
+    margin: 0px;
+    padding: 0px;
+}
+
+.green {
+    color: green;
+}

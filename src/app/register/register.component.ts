@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,9 +8,12 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
 
+  isFrame: boolean = false;
   url: string | null = "https://www.shamanayev.tk/mobile-web";
 
   constructor(private router: Router) {
+    this.isFrame = localStorage.getItem('iframe') == "true";
+
     let url = localStorage.getItem('dataSource')
     
     if (url != null)
@@ -18,7 +21,6 @@ export class RegisterComponent {
   }
 
   onSubmit(value: string) {
-
     if (value === "") {
       localStorage.removeItem('dataSource');
     }
@@ -28,6 +30,14 @@ export class RegisterComponent {
     }
 
     this.router.navigate(['/']);
+  }
+
+  changeChecked() {
+    localStorage.setItem('iframe', this.isFrame.toString());
+  }
+
+  setUrl(url: string) {
+    this.url = url;
   }
 
 }
